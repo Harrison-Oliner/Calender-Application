@@ -1,7 +1,7 @@
 // Moment.js
 var currentDate = moment().format('dddd') + " " + moment().format("Do MMM YYYY");
 var currentHour = moment().format('h:mm:ss a');
-// Text hour var
+
 var nineAm = $("#9am");
 var tenAm = $("#10am");
 var elevenAm = $("#11am");
@@ -12,12 +12,10 @@ var threePm = $("#15pm");
 var fourPm = $("#16pm");
 var fivePm = $("#17pm");
 var sixPm = $("#18pm");
-var sevenPm = $("#19pm");
 
 var hour = moment().hours();
 var userInput;
 var hourSpan;
-// var hourString = $(".hour").text().split(" ");
 
 // Date and Hour
 
@@ -30,7 +28,6 @@ var interval = setInterval(function() {
 }, 100);
 
 function initPage() {
-
   console.log("Current Hour " + hour);
   var init9 = JSON.parse(localStorage.getItem("09:00 am"));
   nineAm.val(init9);
@@ -61,9 +58,6 @@ function initPage() {
   
   var init6 = JSON.parse(localStorage.getItem("06:00 pm"))
   sixPm.val(init6);
-  
-  var init7 = JSON.parse(localStorage.getItem("07:00 pm"))
-  sevenPm.val(init7);
 } 
 
 function background () {
@@ -73,7 +67,7 @@ function background () {
       hour = parseInt(hour);
       console.log(timeTest);
       console.log(hour);
-//      console.log(this);
+
       if (hour > timeTest) {
           $(this).addClass("past");
       } else if (hour < timeTest) {
