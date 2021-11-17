@@ -15,7 +15,7 @@ var sixPm = $("#18pm");
 
 var hour = moment().hours();
 var userInput;
-var hourSpan;
+var timeSpan;
 
 // Date and Hour
 
@@ -86,9 +86,9 @@ $(document).ready(function () {
   $(".saveBtn").on("click", function () {
     userInput = $(this).siblings(".form-control").val().trim();
     console.log(userInput);
-    hourSpan = $(this).siblings(".input-group-prepend").text().trim();
-    console.log(hourSpan);
-    localStorage.setItem(hourSpan, JSON.stringify(userInput));
+    timeSpan = $(this).siblings(".input-group-prepend").text().trim();
+    console.log(timeSpan);
+    localStorage.setItem(timeSpan, JSON.stringify(userInput));
   });
   $("#clearDay").on("click", function () {
     localStorage.clear();
